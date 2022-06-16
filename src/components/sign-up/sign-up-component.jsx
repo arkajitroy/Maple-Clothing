@@ -4,6 +4,10 @@ import {
     createUserDocumentFromAuth,
 } from '../../utils/firebase/firebase-utils'
 
+import FormInput from '../../components/form-input/Form-input-component'
+import './sign-up-styles.scss'
+import Button from '../../components/button/Button-component'
+
 // this object where we are storeing all the datas from the form
 const defaultFormFields = {
     displayName: '',
@@ -47,51 +51,54 @@ const SignUpForm = () => {
 
     return (
         <div>
-            <h1>Sign Up with your Email</h1>
-            <form onSubmit={handleSubmit}>
-                <label>Usename</label>
-                <input
-                    name="displayName"
-                    value={displayName}
-                    type="text"
-                    placeholder="Enter your name"
-                    onChange={handleChange}
-                    required
-                />
-                <label>Email</label>
-                <input
-                    name="email"
-                    type="email"
-                    value={email}
-                    placeholder="Email Address"
-                    onChange={handleChange}
-                    required
-                />
-                <label>Password</label>
-                <input
-                    type="password"
-                    name="password"
-                    value={password}
-                    placeholder="Enter your password"
-                    onChange={handleChange}
-                    autoComplete="off"
-                    required
-                />
-                <label>Confirm Password</label>
-                <input
-                    type="password"
-                    name="confirmPassword"
-                    value={confirmPassword}
-                    placeholder="Confirm your password"
-                    onChange={handleChange}
-                    autoComplete="off"
-                    required
-                />
+            <div className="sign-up-container">
+                <h2>Don't have an account ?</h2>
+                <span>Sign Up with your Email</span>
+                <form onSubmit={handleSubmit}>
+                    {/* <label>Usename</label> */}
+                    <FormInput
+                        label="Username"
+                        name="displayName"
+                        type="text"
+                        value={displayName}
+                        onChange={handleChange}
+                        required
+                    />
+                    {/* <label>Email</label> */}
+                    <FormInput
+                        label="Email"
+                        name="email"
+                        type="email"
+                        value={email}
+                        onChange={handleChange}
+                        required
+                    />
+                    {/* <label>Password</label> */}
+                    <FormInput
+                        label="Password"
+                        name="password"
+                        type="password"
+                        value={password}
+                        onChange={handleChange}
+                        autoComplete="off"
+                        required
+                    />
+                    {/* <label>Confirm Password</label> */}
+                    <FormInput
+                        label="Confirm Password"
+                        name="confirmPassword"
+                        type="password"
+                        value={confirmPassword}
+                        onChange={handleChange}
+                        autoComplete="off"
+                        required
+                    />
 
-                <button type="submit" onClick={handleSubmit}>
-                    Sign Up
-                </button>
-            </form>
+                    <Button id="btn" type="submit" onClick={handleSubmit}>
+                        Sign Up
+                    </Button>
+                </form>
+            </div>
         </div>
     )
 }

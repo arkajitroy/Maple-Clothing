@@ -1,0 +1,17 @@
+.sign-in-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    padding: 1rem;
+
+    .buttons-container {
+        display: flex;
+        justify-content: space-between;
+
+        #btn {
+            width: 11rem;
+            border-radius: 0.3rem;
+        }
+    }
+}
